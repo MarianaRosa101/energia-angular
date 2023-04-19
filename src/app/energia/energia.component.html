@@ -1,1 +1,59 @@
-<p>energia works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Calculadora de consumo de energia</h2>
+        <form>
+          <div class="form-group">
+            <label for="pessoas">Quantidade de pessoas na residência:</label>
+            <input type="number" class="form-control" id="pessoas" name="pessoas" [(ngModel)]="pessoas" (change)="calcularTotalConsumo();calcularTotalGasto()">
+          </div>
+          <div class="form-group">
+            <label for="comodos">Quantidade de cômodos:</label>
+            <input type="number" class="form-control" id="comodos" name="comodos" [(ngModel)]="comodos" (change)="calcularTotalConsumo();calcularTotalGasto()">
+          </div>
+          <div class="form-group">
+
+            <p></p>
+            <label for="maquinaLavar">Possui máquina de lavar roupas?  </label>
+            <br>
+            <input [(ngModel)]="maquinaLavar" name="MaqLavar" type="radio" value="Sim">Sim
+                <input [(ngModel)]="maquinaLavar" name="MaqLavar" type="radio" value="Não">Não
+                <p>
+          </div>
+          <div class="form-group">
+            <label for="secadora">Possui secadora de roupas?  </label>
+            <br>
+            <input [(ngModel)]="secadora" name="Secadora" type="radio" value="Sim">Sim
+            <input [(ngModel)]="secadora" name="Secadora" type="radio" value="Não">Não
+            </div>
+            <p>
+
+          <div class="form-group">
+            <label for="qtdTvs">Quantidade de televisores:</label>
+            <input type="number" class="form-control" id="qtdTvs" name="qtdTvs" [(ngModel)]="qtdTvs" (change)="calcularTotalConsumo();calcularTotalGasto()">
+          </div>
+          <div class="form-group">
+            <label for="qtdComputadores">Quantidade de computadores:</label>
+            <input type="number" class="form-control" id="qtdComputadores" name="qtdComputadores" [(ngModel)]="qtdComputadores" (change)="calcularTotalConsumo();calcularTotalGasto()">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h2>Resultado</h2>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Consumo de energia</h4>
+            <p class="card-text">{{valorConsumo}} kWh/mês</p>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Valor da conta de luz</h4>
+            <p class="card-text">R$ {{valorConta.toFixed(2)}}/mês</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
