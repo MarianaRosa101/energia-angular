@@ -40,5 +40,11 @@ export class EnergiaComponent{
     let valorComputador = this.qtdComputadores * 17.52;
 
     this.valorConta = (valorBanho + valorMaquinaLavar + valorSecadora + valorLampada + valorTv + valorComputador) * this.tarifa;
-  }  
+  } 
+  
+  mostrarResultados() {
+    this.calcularTotalConsumo();
+    this.calcularTotalGasto();
+  }
+
 }

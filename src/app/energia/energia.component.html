@@ -3,6 +3,14 @@
       <div class="col-md-6">
         <h2>Calculadora de consumo de energia</h2>
         <form>
+          <div class="form-group">
+            <label for="pessoas">Quantidade de pessoas na residência:</label>
+            <input type="number" class="form-control" id="pessoas" name="pessoas" [(ngModel)]="pessoas" >
+          </div>
+          <div class="form-group">
+            <label for="comodos">Quantidade de cômodos:</label>
+            <input type="number" class="form-control" id="comodos" name="comodos" [(ngModel)]="comodos" >
+          </div>
 
           <div class="form-group">
             <label for="maquinaLavar">Possui máquina de lavar roupas?</label>
@@ -15,7 +23,6 @@
               <label for="maquinaLavarNao">Não</label>
             </div>
           </div>
-
 
           <div class="form-group">
             <label for="secadora">Possui secadora de roupas?</label>
@@ -30,45 +37,31 @@
           </div>
 
           <div class="form-group">
-            <label for="pessoas">Quantidade de pessoas na residência:</label>
-            <input type="number" class="form-control" id="pessoas" name="pessoas" [(ngModel)]="pessoas" (change)="calcularTotalConsumo();calcularTotalGasto()">
-          </div>
-          <div class="form-group">
-            <label for="comodos">Quantidade de cômodos:</label>
-            <input type="number" class="form-control" id="comodos" name="comodos" [(ngModel)]="comodos" (change)="calcularTotalConsumo();calcularTotalGasto()">
-          </div>
-
-
-          
-
-
-
-          <div class="form-group">
             <label for="qtdTvs">Quantidade de televisores:</label>
-            <input type="number" class="form-control" id="qtdTvs" name="qtdTvs" [(ngModel)]="qtdTvs" (change)="calcularTotalConsumo();calcularTotalGasto()">
+            <input type="number" class="form-control" id="qtdTvs" name="qtdTvs" [(ngModel)]="qtdTvs">
           </div>
           <div class="form-group">
             <label for="qtdComputadores">Quantidade de computadores:</label>
-            <input type="number" class="form-control" id="qtdComputadores" name="qtdComputadores" [(ngModel)]="qtdComputadores" (change)="calcularTotalConsumo();calcularTotalGasto()">
+            <input type="number" class="form-control" id="qtdComputadores" name="qtdComputadores" [(ngModel)]="qtdComputadores">
           </div>
-        </form>
+          <button type="button" class="btn btn-primary btn-small" (click)="mostrarResultados()">Mostrar resultados</button>
+
+          <div class="card">
+            <div class="card-body card-body-right-top">
+              <h4 class="card-title">Consumo de energia</h4>
+              <p class="card-text">{{valorConsumo}} kWh/mês</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body card-body-right-top">
+              <h4 class="card-title">Valor da conta de luz</h4>
+              <p class="card-text">R$ {{valorConta.toFixed(2)}}/mês</p>
+            </div>
+          </div>
+        </form>       
       </div>
-      <div class="col-md-6">
-        <h2>Resultado</h2>
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Consumo de energia</h4>
-            <p class="card-text">{{valorConsumo}} kWh/mês</p>
-          </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Valor da conta de luz</h4>
-            <p class="card-text">R$ {{valorConta.toFixed(2)}}/mês</p>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
+
+      
   
