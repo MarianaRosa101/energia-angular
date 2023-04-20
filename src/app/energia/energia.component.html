@@ -3,6 +3,32 @@
       <div class="col-md-6">
         <h2>Calculadora de consumo de energia</h2>
         <form>
+
+          <div class="form-group">
+            <label for="maquinaLavar">Possui máquina de lavar roupas?</label>
+            <div>
+              <input type="radio" id="maquinaLavarSim" [(ngModel)]="maquinaLavar" name="maquinaLavar" value="Sim">
+              <label for="maquinaLavarSim">Sim</label>
+            </div>
+            <div>
+              <input type="radio" id="maquinaLavarNao" [(ngModel)]="maquinaLavar" name="maquinaLavar" value="">
+              <label for="maquinaLavarNao">Não</label>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="secadora">Possui secadora de roupas?</label>
+            <div>
+              <input type="radio" id="secadoraSim" [(ngModel)]="secadora" name="secadora" value="Sim">
+              <label for="secadoraSim">Sim</label>
+            </div>
+            <div>
+              <input type="radio" id="secadoraNao" [(ngModel)]="secadora" name="secadora" value="">
+              <label for="secadoraNao">Não</label>
+            </div>
+          </div>
+
           <div class="form-group">
             <label for="pessoas">Quantidade de pessoas na residência:</label>
             <input type="number" class="form-control" id="pessoas" name="pessoas" [(ngModel)]="pessoas" (change)="calcularTotalConsumo();calcularTotalGasto()">
@@ -11,22 +37,11 @@
             <label for="comodos">Quantidade de cômodos:</label>
             <input type="number" class="form-control" id="comodos" name="comodos" [(ngModel)]="comodos" (change)="calcularTotalConsumo();calcularTotalGasto()">
           </div>
-          <div class="form-group">
 
-            <p></p>
-            <label for="maquinaLavar">Possui máquina de lavar roupas?  </label>
-            <br>
-            <input [(ngModel)]="maquinaLavar" name="MaqLavar" type="radio" value="Sim">Sim
-                <input [(ngModel)]="maquinaLavar" name="MaqLavar" type="radio" value="Não">Não
-                <p>
-          </div>
-          <div class="form-group">
-            <label for="secadora">Possui secadora de roupas?  </label>
-            <br>
-            <input [(ngModel)]="secadora" name="Secadora" type="radio" value="Sim">Sim
-            <input [(ngModel)]="secadora" name="Secadora" type="radio" value="Não">Não
-            </div>
-            <p>
+
+          
+
+
 
           <div class="form-group">
             <label for="qtdTvs">Quantidade de televisores:</label>

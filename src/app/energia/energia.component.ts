@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-energia',
@@ -10,8 +9,8 @@ export class EnergiaComponent{
 
    pessoas: number = 0;
    comodos: number = 0;
-   maquinaLavar: string = 'Não';
-   secadora: string = 'Não';
+   maquinaLavar: string = '';
+   secadora: string = '';
    qtdTvs: number = 0;
    qtdComputadores: number = 0;
 
@@ -29,7 +28,7 @@ export class EnergiaComponent{
     let consumoTv = this.qtdTvs * 14.4;
     let consumoComputador = this.qtdComputadores * 27;
 
-    this.valorConsumo = consumoBanho + consumoMaquinaLavar + consumoSecadora + consumoLampada + consumoTv + consumoComputador; 
+    this.valorConsumo = (consumoBanho + consumoLampada + consumoTv + consumoComputador)+ consumoMaquinaLavar + consumoSecadora; 
   }
 
   calcularTotalGasto(): void {
